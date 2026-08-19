@@ -534,6 +534,47 @@ DynarmicWrapper64 *touchHLE_DynarmicWrapper64_new(void *direct_memory_access_ptr
 }
 void touchHLE_DynarmicWrapper64_delete(DynarmicWrapper64 *cpu) { delete cpu; }
 
+std::uint64_t touchHLE_DynarmicWrapper64_get_reg(
+    const DynarmicWrapper64 *cpu,
+    std::size_t index
+) {
+    return cpu->GetReg(index);
+}
+
+void touchHLE_DynarmicWrapper64_set_reg(
+    DynarmicWrapper64 *cpu,
+    std::size_t index,
+    std::uint64_t value
+) {
+    cpu->SetReg(index, value);
+}
+
+std::uint64_t touchHLE_DynarmicWrapper64_get_pc(
+    const DynarmicWrapper64 *cpu
+) {
+    return cpu->GetPC();
+}
+
+void touchHLE_DynarmicWrapper64_set_pc(
+    DynarmicWrapper64 *cpu,
+    std::uint64_t pc
+) {
+    cpu->SetPC(pc);
+}
+
+std::uint64_t touchHLE_DynarmicWrapper64_get_sp(
+    const DynarmicWrapper64 *cpu
+) {
+    return cpu->GetSP();
+}
+
+void touchHLE_DynarmicWrapper64_set_sp(
+    DynarmicWrapper64 *cpu,
+    std::uint64_t sp
+) {
+    cpu->SetSP(sp);
+}
+
 std::int32_t touchHLE_DynarmicWrapper64_run_or_step(DynarmicWrapper64 *cpu, touchHLE_Mem *mem, std::uint64_t *ticks) {
   return cpu->run_or_step(mem, ticks);
 }
