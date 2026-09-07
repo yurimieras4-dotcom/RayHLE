@@ -511,7 +511,7 @@ pub const CLASSES: ClassExports = objc_classes! {
 }
 
 - (NSInteger)maximumInputNumberOfChannels {
-    0
+    1
 }
 
 - (NSInteger)maximumOutputNumberOfChannels {
@@ -537,7 +537,7 @@ pub const CLASSES: ClassExports = objc_classes! {
 // MARK: - Input / output availability
 
 - (bool)isInputAvailable {
-    false
+    true
 }
 
 - (bool)isOtherAudioPlaying {
